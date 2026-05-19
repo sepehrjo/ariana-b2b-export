@@ -1,313 +1,110 @@
-# 🌾 Ariana Global Trade - B2B Export Platform
+# Ariana Global Trade - B2B Export Platform
 
-A modern, multi-language B2B export platform built with Next.js for Ariana Global Trade — a premium Iranian agricultural commodities supplier specializing in saffron, pistachios, dates, and specialty goods.
+This repository contains the source code for the Ariana Global Trade B2B export website, a modern, multi-language platform built with Next.js. It is designed for a premium Iranian agricultural commodities supplier specializing in saffron, pistachios, dates, and other specialty goods.
 
-**Live**: [arianaglobaltrade.com](https://arianaglobaltrade.com)  
-**Status**: ✅ Production Ready  
+**Status**: Production Ready  
 **Last Updated**: May 19, 2026
 
 ---
 
-## 🎯 Overview
+## Overview
 
-Ariana Global Trade is a next-generation B2B export website designed to:
+The Ariana Global Trade website is a next-generation B2B export platform designed to connect with global importers. Its primary functions are to generate qualified leads, provide instant pricing information, and build trust with potential clients through a professional and informative interface.
 
-- 🌍 **Reach global importers** in 14+ active markets
-- 💬 **Support 3 languages**: English, Persian (Farsi), Armenian
-- 🤖 **Provide instant quotes** via AI-powered chatbot
-- 📋 **Capture qualified leads** with professional forms
-- 🔒 **Demonstrate trust** through ISO certifications and metrics
-- 📱 **Adapt to all devices** with responsive design
+The platform supports three languages (English, Persian, and Armenian) and is fully responsive to adapt to all devices.
 
----
+## Key Features
 
-## ✨ Key Features
+*   **Multi-Language Support**: The interface is fully translated into English, Persian (with RTL support), and Armenian. The system detects the user's preferred language and allows for manual switching, with the choice persisted in local storage.
 
-### 1. **Multi-Language Support**
-- **English (en)**: Primary business language, LTR layout
-- **Persian (fa)**: Full RTL support for Iranian market
-- **Armenian (hy)**: Growing market, LTR layout
-- All UI elements, forms, and product descriptions translated
-- Automatic language detection and localStorage persistence
-- Dynamic `document.dir` switching for RTL/LTR
+*   **Intelligent Quote System**: An integrated chatbot provides instant price calculations. It uses natural language processing to understand inquiries about products and quantities (e.g., "What is the price for 500kg of saffron?"). The system automatically applies volume-based discounts and provides shipping estimates.
 
-### 2. **Intelligent Quote System**
-- **Instant Price Calculation**: Auto-detects product inquiries and quantities
-- **Natural Language Processing**: Understands "500kg of saffron", "need pistachios", etc.
-- **Volume Discounts**: Automatically applies 5-20% discounts based on order size
-- **Shipping Estimates**: Provides FOB/CIF pricing and lead times
-- **Multi-Product**: Saffron, Pistachios, Dates, Figs, Apricots, Spices, Herbal Drinks
+*   **Dynamic Product Pages**: The site includes detailed pages for seven core products. These pages are pre-rendered for fast loading and include technical specifications, certification details, packaging options, and clear calls-to-action.
 
-### 3. **Dynamic Product Pages**
-- **7 Product Detail Pages**: Each with full specifications, certifications, packaging options
-- **Pre-rendered Routes**: Lightning-fast static pages via `generateStaticParams`
-- **Rich Content**: Images, technical specs, shipping options, MOQ, certifications
-- **CTAs**: Request samples, contact sales, request quotes
+*   **Lead Capture System**: A professional, bilingual form captures leads from potential clients. Submissions are validated and stored in a simple JSONL format, which is ready for integration with a CRM like HubSpot or Salesforce.
 
-### 4. **Lead Capture System**
-- **Professional Form**: Name, email, phone, company, product, quantity, message
-- **Bilingual Interface**: English and Persian (with Armenian fallback)
-- **Real-time Validation**: Required field checks and error handling
-- **CRM Ready**: JSONL format for easy integration with HubSpot, Pipedrive, Salesforce
-- **Persistent Storage**: `public/data/leads.jsonl` with timestamps
+*   **Trust and Authority Signals**: The website prominently displays ISO certifications (ISO 22000, ISO 3632), GlobalG.A.P., and other quality assurances. It also showcases key business metrics, such as the number of partners, volume exported, and supply chain traceability.
 
-### 5. **Trust & Authority Signals**
-- **ISO Certifications**: ISO 22000, ISO 3632, GlobalG.A.P., Phytosanitary
-- **Export Metrics**: 500+ partners, 12k+ tons exported, 100% traceability
-- **Company Heritage**: Established 1998, proven track record
-- **Multi-Market Presence**: Active in 14+ countries
-
-### 6. **AI-Powered Chatbot**
-- **Local-First Responses**: Fast answers from knowledge base
-- **Quote Intent Detection**: Auto-detects pricing requests
-- **Context Awareness**: Understands product, shipping, sample questions
-- **AI Fallback**: OpenAI integration for complex queries
-- **Multi-Language**: Handles English, Persian, Armenian
+*   **AI-Powered Chatbot**: A chatbot provides immediate answers to common questions using a local knowledge base. For more complex queries, it can fall back to the OpenAI API. It understands multiple languages and is designed to detect and respond to pricing requests.
 
 ---
 
-## 🚀 Getting Started
+## Technical Stack
+
+*   **Framework**: Next.js 16.2.6 (App Router) with React 19 and TypeScript
+*   **Styling**: Tailwind CSS with a custom design system, using Framer Motion for animations and Shadcn UI for components.
+*   **Backend**: Next.js API routes handle chat and lead capture. An optional integration with the OpenAI API provides advanced chat capabilities. Lead data is stored in a local JSONL file.
+
+---
+
+## Getting Started
 
 ### Prerequisites
-- Node.js 18+
-- npm or yarn
+
+*   Node.js version 18 or higher
+*   npm or yarn package manager
 
 ### Installation
-```bash
-# Clone the repository
-git clone https://github.com/sepehrjo/ariana-b2b-export.git
-cd ariana-b2b-export
 
-# Install dependencies
-npm install
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/sepehrjo/ariana-b2b-export.git
+    cd ariana-b2b-export
+    ```
 
-# Create .env.local for OpenAI API (optional)
-echo "OPENAI_API_KEY=your_key_here" > .env.local
-```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-### Development
-```bash
-npm run dev
-open http://localhost:3000
-```
+3.  **Environment Variables (Optional):**
+    If you plan to use the OpenAI API for the chatbot, create a `.env.local` file and add your API key:
+    ```
+    OPENAI_API_KEY=your_key_here
+    ```
 
-### Production Build
-```bash
-npm run build
-npm run start
-```
+### Running the Application
 
----
+*   **Development:**
+    To run the development server:
+    ```bash
+    npm run dev
+    ```
+    The application will be available at `http://localhost:3000`.
 
-## 📝 May 2026 Updates
-
-### Phase 1: Localization (Armenian Support)
-- Extended language system to 3 languages (en, fa, hy)
-- Added Noto Sans Armenian font
-- Implemented RTL/LTR auto-switching
-- Language switcher in navbar
-
-### Phase 2: Dynamic Routing
-- Created `/products/[slug]` pages
-- Built product catalog system (`lib/products.ts`)
-- Pre-renders all 7 products with `generateStaticParams`
-- ProductDetail component with full specs
-
-### Phase 3: Trust Signals
-- Added `CertificationsSection` component
-- Integrated `ExportCapacitySection` component
-- ISO 22000, GlobalG.A.P., ISO 3632 badges
-- Metrics: 500+ partners, 12k+ tons, 100% traceability
-
-### Phase 4: Intelligent Quotes
-- Built `lib/chatbot/pricing.ts` pricing engine
-- Quote intent detection in chatbot
-- Volume discounts (5-20% off based on quantity)
-- Natural language quantity parsing
-- Automated shipping estimates and lead times
-
-### Phase 5: Lead Capture
-- Professional `LeadCaptureForm` component
-- `/api/leads` endpoint for storage
-- JSONL persistence for CRM import
-- Bilingual validation and success messages
-
-### Phase 6: Button Fixes
-- Smooth scroll navigation to forms
-- Email client integration for sales contact
-- All CTAs fully functional
-- Tested on all pages
+*   **Production:**
+    To build and run the application for production:
+    ```bash
+    npm run build
+    npm run start
+    ```
 
 ---
 
-## 🏗️ Architecture
+## Customization
 
-**Tech Stack**:
-```
-Next.js 16.2.6 (App Router) + React 19 + TypeScript
-Tailwind CSS + Framer Motion + Shadcn UI
-OpenAI API (chat fallback)
-```
+The platform is designed to be easily customized:
 
-**New Files Created** (10 total):
-- `lib/chatbot/pricing.ts` - Pricing engine
-- `app/api/leads/route.ts` - Lead storage API
-- `components/lead-capture-form.tsx` - Lead form
-- `components/product-detail.tsx` - Product pages
-- `components/certifications-section.tsx` - Trust signals
-- `components/export-capacity-section.tsx` - Metrics
-- `app/products/[slug]/page.tsx` - Dynamic pages
-- `lib/products.ts` - Product catalog
-
-**Modified Files** (6 total):
-- `app/layout.tsx` - Added Armenian font
-- `lib/i18n.tsx` - Extended to 3 languages
-- `components/navbar.tsx` - Language switcher
-- `lib/chatbot/engine.ts` - Quote detection
-- `lib/chatbot/data.ts` - Lang type extended
-- `next.config.mjs` - Removed unsupported i18n
+*   **Branding**: Colors can be modified in `tailwind.config.ts`, and fonts are managed in `app/layout.tsx`.
+*   **Content**: Product information is stored in `lib/products.ts`, pricing logic is in `lib/chatbot/pricing.ts`, and all text translations are in `lib/i18n.tsx`.
+*   **Contact**: The primary sales email address can be updated in `components/product-detail.tsx`.
 
 ---
 
-## 📊 API Endpoints
-
-### Chat API
-```
-POST /api/chat
-{
-  "message": "Price for 500kg saffron?",
-  "lang": "en|fa|hy",
-  "currentSection": "products"
-}
-```
-
-### Lead Capture API
-```
-POST /api/leads
-{
-  "fullName": "...",
-  "email": "...",
-  "phone": "...",
-  "company": "...",
-  "product": "saffron|pistachios|dates|...",
-  "quantity": "500",
-  "message": "...",
-  "lang": "en|fa|hy"
-}
-```
-
-**Response**: JSONL stored in `public/data/leads.jsonl` with timestamp and unique ID
-
----
-
-## 🔒 Security & Performance
-
-- ✅ Zero build errors
-- ✅ TypeScript type-safe throughout
-- ✅ Input validation on all forms
-- ✅ Image optimization enabled
-- ✅ Pre-rendered static pages (9 routes)
-- ✅ File-based JSONL storage (no database)
-- ✅ CORS-ready APIs
-
-**Build Metrics**:
-- Compilation: ~2 seconds
-- TypeScript: ~4 seconds
-- Static pages: 9 pre-rendered
-- Dynamic routes: 2 APIs
-- Product pages: 7 SSG
-
----
-
-## 🎨 Customization
-
-### Branding
-- Colors: `tailwind.config.ts`
-- Fonts: `app/layout.tsx`
-- Products: `lib/products.ts`
-- Pricing: `lib/chatbot/pricing.ts`
-- Translations: `lib/i18n.tsx`
-- Email: `components/product-detail.tsx`
-
-### Languages
-Add new language in `lib/i18n.tsx`:
-```typescript
-const dict = {
-  en: { /* ... */ },
-  fa: { /* ... */ },
-  hy: { /* ... */ },
-  // new_lang: { /* ... */ }
-}
-```
-
----
-
-## 📱 Browser Support
-
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- iOS Safari 14+
-- Android Chrome 90+
-
----
-
-## 🐛 Troubleshooting
-
-**Quote detection not working?**
-- Check product names in chat (saffron, pistachios, etc.)
-- Include "kg" in quantity (e.g., "500 kg")
-
-**Language not switching?**
-- Clear localStorage: `localStorage.clear()`
-- Check `LanguageProvider` in `layout.tsx`
-
-**Leads not saving?**
-- Check file permissions on `public/data/`
-- Verify `/api/leads` endpoint works
-
-**Product page not loading?**
-- Check slug format (lowercase, hyphens)
-- Rebuild: `npm run build`
-
----
-
-## 🎉 Deployment
+## Deployment
 
 ### Vercel (Recommended)
-```bash
-git push origin main
-# Auto-deploys from GitHub
-```
+The project is optimized for deployment on Vercel. Simply connect your GitHub repository to a Vercel project, and it will be deployed automatically on every push to the `main` branch.
 
 ### Docker
+A `Dockerfile` is included for building and deploying the application as a container:
 ```bash
 docker build -t ariana-b2b .
 docker run -p 3000:3000 ariana-b2b
 ```
 
-### Environment Variables
-```bash
-OPENAI_API_KEY=sk-...  # Optional, for AI fallback
-NODE_ENV=production
-```
-
 ---
 
-## 📄 License
+## License
 
-Proprietary to Ariana Global Trade. All rights reserved.
-
----
-
-## 📞 Support
-
-- Email: support@arianaglobaltrade.com
-- GitHub: [Issues](https://github.com/sepehrjo/ariana-b2b-export/issues)
-
----
-
-**Built with ❤️ for global trade partnerships**
-
-Last updated: May 19, 2026  
-**Status**: ✅ Production Ready
+This software is proprietary and is the exclusive property of Ariana Global Trade. All rights are reserved. Unauthorized copying, modification, or distribution of this software is strictly prohibited.
