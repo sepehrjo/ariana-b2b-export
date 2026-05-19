@@ -104,7 +104,3 @@ docker run -p 3000:3000 ariana-b2b
 ```
 
 ---
-
-## License
-
-This software is proprietary and is the exclusive property of Ariana Global Trade. All rights are reserved. Unauthorized copying, modification, or distribution of this software is strictly prohibited.
