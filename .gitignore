@@ -19,13 +19,6 @@ yarn-error.log*
 # env files
 .env*
 
-# Media files - use CDN for images and videos
-public/images/
-public/videos/
-public/screenshots/
-public/.DS_Store
-.DS_Store
-
 # vercel
 .vercel
 
@@ -34,4 +27,4 @@ public/.DS_Store
 next-env.d.ts
 
 # OS
-.DS_Storepublic/videos/
+.DS_Store
