@@ -29,6 +29,27 @@ The platform supports three languages (English, Persian, and Armenian) and is fu
 
 ---
 
+## Feature Walkthrough
+
+Here is a visual overview of the key systems implemented on the platform:
+
+### 1. Seamless Multi-Language Support
+The website supports English, Persian (RTL layout), and Armenian (LTR layout) with a fast, instant language switcher in the navigation bar. Fonts and layout directions adjust dynamically to provide an authentic localized experience for global buyers.
+
+![Multi-Language Support Showcase (Persian RTL)](public/screenshots/languages-support.png)
+
+### 2. Intelligent & Price-Sensitive Chatbot
+The conversational chatbot can process instant quote requests by parsing product names and volume quantities. It is preloaded with a localized B2B pricing model, applying tier-based wholesale discounts automatically and presenting custom shipping breakdowns directly in the chat panel.
+
+![Price-Sensitive Chatbot Negotiation](public/screenshots/chatbot-sensitivity.png)
+
+### 3. Professional Quote & Sample Inquiry Form
+For large-scale trade partners, a unified bilingual inquiry form is provided to request direct quotes or product samples. It collects essential B2B details—such as company information, product types, and targeted quantities—validating inputs and storing them in an easy-to-export format.
+
+![Lead Generation & Sample Request Form](public/screenshots/quote-inquiry.png)
+
+---
+
 ## Technical Stack
 
 *   **Framework**: Next.js 16.2.6 (App Router) with React 19 and TypeScript
