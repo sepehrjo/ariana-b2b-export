@@ -215,7 +215,7 @@ export function Chatbot() {
         const data = (await res.json()) as { text: string; links: ChatLink[]; source: "ai" | "local" | "fallback" }
         appendAssistant({ text: data.text, links: data.links || [], source: data.source })
       } catch (err) {
-        console.error("[v0] chat request failed:", err)
+        console.error("Chat request failed:", err)
         appendAssistant({
           text: labels.errorText,
           links: [

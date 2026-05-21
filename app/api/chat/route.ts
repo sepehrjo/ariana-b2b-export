@@ -105,7 +105,7 @@ export async function POST(req: Request): Promise<Response> {
     }
     return Response.json(payload)
   } catch (err) {
-    console.error("[v0] chat AI fallback failed:", err)
+    console.error("Chat AI fallback failed:", err)
     // 3. Graceful degradation when AI is unreachable
     const fallback: ChatResponseBody = {
       text:
